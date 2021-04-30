@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar {
+  background-color: blue;
+}
+
+.nav-link, .navbar-brand {
+  color: white;
+}
