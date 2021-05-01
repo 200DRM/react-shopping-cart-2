@@ -1,26 +1,24 @@
-import React from 'react'
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+  const cartObj = useSelector(store => store.cartReducer);
+
   return (
     <div>
-      <nav class='navbar navbar-expand-lg'>
-        <a class='navbar-brand' href='/'>Navbar</a>
-        <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
-          <span class='navbar-toggler-icon'></span>
-        </button>
-
-        <div class='collapse navbar-collapse' id='navbarSupportedContent'>
-          <ul class='navbar-nav mx-auto'>
-            <li class='nav-item'>
-              <a class='nav-link' href='/'>Home</a>
+      <nav className='navbar navbar-expand-lg'>
+        <div className='collapse navbar-collapse' id='navbarSupportedContent'>
+          <ul className='navbar-nav mx-auto'>
+            <li className='nav-item'>
+              <a className='nav-link' href='/'>Home</a>
             </li>
-            <li class='nav-item'>
-              <a class='nav-link' href='/add-item'>Add Item</a>
+            <li className='nav-item'>
+              <a className='nav-link' href='/add-item'>Add Item</a>
             </li>
           </ul>
-          <ul class='navbar-nav mx-right'>
-            <li class='nav-item'>
-              <a class='nav-link' href='/cart'>Cart</a>
+          <ul className='navbar-nav mx-right'>
+            <li className='nav-item'>
+              <a className='nav-link' href='/cart'>Cart {cartObj.cartItems.length}</a>
             </li>
           </ul>
         </div>
